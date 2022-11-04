@@ -115,8 +115,8 @@ WHERE
     film.title ~ '^+title+$'
 ORDER BY     actor.last_name, actor.first_name ASC
 '''
-title="Academy Dinosaur"
-test_midcode3="SELECT actor.first_name, actor.last_name FROM film INNER JOIN film_actor USING (film_id) INNER JOIN actor USING (actor_id) WHERE film.title ~ '^" + title + "$' ORDER BY actor.first_name, actor.last_name ASC"
+#title="Academy Dinosaur"
+#test_midcode3="SELECT actor.first_name, actor.last_name FROM film INNER JOIN film_actor USING (film_id) INNER JOIN actor USING (actor_id) WHERE film.title ~ '^" + title + "$' ORDER BY actor.first_name, actor.last_name ASC"
 
 def film_cast(title:str)->pd.DataFrame:
     ''' Funkcja zwracająca wynik zapytania do bazy o obsadę filmu o dokładnie zadanym tytule.
@@ -149,13 +149,13 @@ ORDER BY film.title ASC
 
 gdzie LIST to wyliczanka elementów, połączana z elemnt1|element2|...|elementN 
 '''
-words=["Alone","TrIp"]
+#words=["Alone","TrIp"]
 #words=['Giant', 'Harry', 'Birdcage', 'Iron']
-str_final=""
-for a in words:
-    str_final=str_final+a+"|"
-str_final=str_final[:-1]
-test_midcode4="SELECT film.title FROM film WHERE film.title ~* '("+str_final+")' ORDER BY film.title ASC"
+#str_final=""
+#for a in words:
+#    str_final=str_final+a+"|"
+#str_final=str_final[:-1]
+#test_midcode4="SELECT film.title FROM film WHERE film.title ~* '("+str_final+")' ORDER BY film.title ASC"
 
 
 def film_title_case_insensitive(words:list) :
