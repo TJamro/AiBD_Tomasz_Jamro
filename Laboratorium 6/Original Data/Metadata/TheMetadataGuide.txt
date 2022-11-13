@@ -1,0 +1,15 @@
+Originalny plik zawiera informację zwrotne od klientów dotyczące oceny odkurzaczy dla województwa Śląskiego w jednej z sieci sklepów. 
+
+
+Originalny plik zawiera dane z 6 kolumnami:
+1) Nienazwana kolumna, liczba porządkowa
+2) Kolumna "Dni od zakupu", jak wskazuje nazwa, określa czas pomiędzy zakupem a wysłaniem oceny
+3) Kolumna "Marka" zawiera informację, od której firmy 
+4) Kolumna "Wiek kupującego" zawiera wiek osób które oceniajy kupiony produkt
+Najpradopodobniej nie była to wymagana informacja, ponieważ w niektórych wpisach brakuje tej informacji
+Szansa, że wywołane jest to utratą/uszkodzeniem danych jest minimalna, w takim przypadku wszystkie kolumny udległyby uszkodzeniu
+5) Kolumna "Płeć kupującego" zawiera dwie możliwe wartości K,M
+K - Kobieta
+M - Męszczyzna
+bd. - 1 wykryty wynik, z powodu braku informacji metadanych od źródła, pozostaje jedynie zgadnąć że była płeć prawdopodobnie nie została podana.
+6) Kolumna "Ocena", Najważniejsza informacja, określa w skali 0-5 zadowolenie z produktu 
