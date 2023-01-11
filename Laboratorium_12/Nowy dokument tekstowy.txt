@@ -1,0 +1,41 @@
+class User(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True)
+    email = Column(String, unique=True)
+    """def __repr__(self):
+        return "<authors(id='{0}', name={1}, surname={2}, born_date={3})>".format(
+            self.id, self.name, self.surnamey, self.born_date)"""
+
+class Host(Base):
+    __tablename__ = 'hosts'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+
+class Country(Base):
+    __tablename__ = 'countries'
+    id = Column(Integer, primary_key=True)
+    country_code = Column(String)
+    name = Column(String)
+    
+class City(Base):
+    __tablename__ = 'cities'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    country_id = Column(Integer, ForeignKey('countries.id'))
+    
+class Place(Base):
+    __tablename__ = 'places'
+    id = Column(Integer, primary_key=True)
+    host_id = Column(Integer, ForeignKey('hosts.id'),unique = True, nullable = False)
+    address = Column(String)
+    city_id = Column(Integer, ForeignKey('cities.id'))
+    
+class Booking(Base):
+    __tablename__ = 'bookings'
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id'))
+    place_id = Column(Integer, ForeignKey('places.id'))
+    start_date = Column(Date)
+    end_date = Column(Date)
+    price_per_night = Column(Float)
+    num_nights = Column(Integer)
